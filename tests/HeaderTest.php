@@ -10,7 +10,7 @@ use
 final class HeaderTest extends TestCase
 {
 
-    public function testHeaderValue(): void
+    public function testValue(): void
     {
         $header = new Header('test', 'value');
 
@@ -22,7 +22,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderValueArray(): void
+    public function testValueArray(): void
     {
         $header = new Header('test', ['first', 'last']);
 
@@ -35,7 +35,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderEmptyValue(): void
+    public function testEmptyValue(): void
     {
         $header = new Header('test');
 
@@ -45,7 +45,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderAppendValue(): void
+    public function testAppendValue(): void
     {
         $header = new Header('test', 'value');
 
@@ -63,7 +63,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderAppendValueEmpty(): void
+    public function testAppendValueEmpty(): void
     {
         $header = new Header('test', 'value');
 
@@ -80,7 +80,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderGetHeaderString(): void
+    public function testGetHeaderString(): void
     {
         $header = new Header('test', 'value');
 
@@ -90,7 +90,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderGetHeaderStringAssociative(): void
+    public function testGetHeaderStringAssociative(): void
     {
         $header = new Header('test', ['a' => 1, 'b' => 2]);
 
@@ -100,7 +100,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderGetName(): void
+    public function testGetName(): void
     {
         $header = new Header('test', 'value');
 
@@ -110,7 +110,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderGetValueString(): void
+    public function testGetValueString(): void
     {
         $header = new Header('test', 'value');
 
@@ -120,7 +120,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderGetValueStringAssociative(): void
+    public function testGetValueStringAssociative(): void
     {
         $header = new Header('test', ['a' => 1, 'b' => 2]);
 
@@ -130,7 +130,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderPrependValue(): void
+    public function testPrependValue(): void
     {
         $header = new Header('test', 'value');
 
@@ -148,7 +148,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderPrependValueEmpty(): void
+    public function testPrependValueEmpty(): void
     {
         $header = new Header('test', 'value');
 
@@ -165,7 +165,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderSetValue(): void
+    public function testSetValue(): void
     {
         $header = new Header('test', 'value');
 
@@ -182,7 +182,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderSetValueArray(): void
+    public function testSetValueArray(): void
     {
         $header = new Header('test', 'value');
 
@@ -200,7 +200,7 @@ final class HeaderTest extends TestCase
         );
     }
 
-    public function testHeaderSetValueEmpty(): void
+    public function testSetValueEmpty(): void
     {
         $header = new Header('test', 'value');
 
