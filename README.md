@@ -15,7 +15,7 @@
 **Using Composer**
 
 ```
-composer install fyre/header
+composer require fyre/header
 ```
 
 In PHP:
