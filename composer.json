@@ -1,6 +1,6 @@
 {
     "name": "fyre/header",
-    "description": "A header library.",
+    "description": "A HTTP header library.",
     "type": "library",
     "license": "MIT",
     "authors": [

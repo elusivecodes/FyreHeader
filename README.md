@@ -1,6 +1,6 @@
 # FyreHeader
 
-**FyreHeader** is a free, header library for *PHP*.
+**FyreHeader** is a free, HTTP header library for *PHP*.
 
 
 ## Table Of Contents
