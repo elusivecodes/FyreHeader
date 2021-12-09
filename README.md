@@ -21,7 +21,7 @@ composer require fyre/header
 In PHP:
 
 ```php
-use Fyre\Header\Header;
+use Fyre\Http\Header;
 ```
 
 

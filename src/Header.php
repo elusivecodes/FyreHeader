@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Fyre\Header;
+namespace Fyre\Http;
 
 use function
     array_keys,

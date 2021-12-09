@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use
-    Fyre\Header\Header,
+    Fyre\Http\Header,
     PHPUnit\Framework\TestCase;
 
 final class HeaderTest extends TestCase
