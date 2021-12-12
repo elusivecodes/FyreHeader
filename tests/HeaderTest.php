@@ -67,10 +67,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
-            $header,
-            $header->appendValue('')
-        );
+        $header->appendValue('');
 
         $this->assertEquals(
             [
@@ -152,10 +149,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
-            $header,
-            $header->prependValue('')
-        );
+        $header->prependValue('');
 
         $this->assertEquals(
             [
@@ -186,10 +180,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
-            $header,
-            $header->setValue(['first', 'last'])
-        );
+        $header->setValue(['first', 'last']);
 
         $this->assertEquals(
             [
@@ -204,10 +195,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
-            $header,
-            $header->setValue('')
-        );
+        $header->setValue('');
 
         $this->assertEquals(
             [],
