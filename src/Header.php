@@ -39,7 +39,7 @@ class Header
      */
     public function __toString(): string
     {
-        return $this-getHeaderString();
+        return $this->getHeaderString();
     }
 
     /**
