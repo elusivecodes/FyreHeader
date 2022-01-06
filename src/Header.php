@@ -47,7 +47,7 @@ class Header
      * @param string $value The value to append.
      * @return Header The Header.
      */
-    public function appendValue(string $value): self
+    public function appendValue(string $value): static
     {
         if ($value && !in_array($value, $this->value)) {
             $this->value[] = $value;
@@ -109,7 +109,7 @@ class Header
      * @param string $value The value to prepend.
      * @return Header The Header.
      */
-    public function prependValue(string $value): self
+    public function prependValue(string $value): static
     {
         if ($value && !in_array($value, $this->value)) {
             array_unshift($this->value, $value);
@@ -123,7 +123,7 @@ class Header
      * @param string|array The header value.
      * @return Header The Header.
      */
-    public function setValue(string|array $value): self
+    public function setValue(string|array $value): static
     {
         if (!is_array($value)) {
             $value = [$value];
