@@ -14,7 +14,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
+        $this->assertSame(
             [
                 'value'
             ],
@@ -26,7 +26,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', ['first', 'last']);
 
-        $this->assertEquals(
+        $this->assertSame(
             [
                 'first',
                 'last'
@@ -39,7 +39,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test');
 
-        $this->assertEquals(
+        $this->assertSame(
             [],
             $header->getValue()
         );
@@ -49,12 +49,12 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
+        $this->assertSame(
             $header,
             $header->appendValue('last')
         );
 
-        $this->assertEquals(
+        $this->assertSame(
             [
                 'value',
                 'last'
@@ -69,7 +69,7 @@ final class HeaderTest extends TestCase
 
         $header->appendValue('');
 
-        $this->assertEquals(
+        $this->assertSame(
             [
                 'value'
             ],
@@ -81,7 +81,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
+        $this->assertSame(
             'test: value',
             $header->getHeaderString()
         );
@@ -91,7 +91,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', ['a' => 1, 'b' => 2]);
 
-        $this->assertEquals(
+        $this->assertSame(
             'test: a=1, b=2',
             $header->getHeaderString()
         );
@@ -101,7 +101,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
+        $this->assertSame(
             'test',
             $header->getName()
         );
@@ -111,7 +111,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
+        $this->assertSame(
             'value',
             $header->getValueString()
         );
@@ -121,7 +121,7 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', ['a' => 1, 'b' => 2]);
 
-        $this->assertEquals(
+        $this->assertSame(
             'a=1, b=2',
             $header->getValueString()
         );
@@ -131,12 +131,12 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
+        $this->assertSame(
             $header,
             $header->prependValue('first')
         );
 
-        $this->assertEquals(
+        $this->assertSame(
             [
                 'first',
                 'value'
@@ -151,7 +151,7 @@ final class HeaderTest extends TestCase
 
         $header->prependValue('');
 
-        $this->assertEquals(
+        $this->assertSame(
             [
                 'value'
             ],
@@ -163,12 +163,12 @@ final class HeaderTest extends TestCase
     {
         $header = new Header('test', 'value');
 
-        $this->assertEquals(
+        $this->assertSame(
             $header,
             $header->setValue('new')
         );
 
-        $this->assertEquals(
+        $this->assertSame(
             [
                 'new'
             ],
@@ -182,7 +182,7 @@ final class HeaderTest extends TestCase
 
         $header->setValue(['first', 'last']);
 
-        $this->assertEquals(
+        $this->assertSame(
             [
                 'first',
                 'last'
@@ -197,7 +197,7 @@ final class HeaderTest extends TestCase
 
         $header->setValue('');
 
-        $this->assertEquals(
+        $this->assertSame(
             [],
             $header->getValue()
         );
