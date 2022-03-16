@@ -90,7 +90,7 @@ class Header
     public function getValueString(): string
     {
         $options = array_map(
-            function($key, $value) {
+            function(mixed $key, string $value): string {
                 if (is_numeric($key)) {
                     return $value;
                 }
