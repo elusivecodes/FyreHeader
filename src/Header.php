@@ -49,7 +49,7 @@ class Header
      */
     public function appendValue(string $value): static
     {
-        if ($value && !in_array($value, $this->value)) {
+        if ($value !== '' && !in_array($value, $this->value)) {
             $this->value[] = $value;
         }
 
@@ -111,7 +111,7 @@ class Header
      */
     public function prependValue(string $value): static
     {
-        if ($value && !in_array($value, $this->value)) {
+        if ($value !== '' && !in_array($value, $this->value)) {
             array_unshift($this->value, $value);
         }
 
@@ -129,7 +129,10 @@ class Header
             $value = [$value];
         }
 
-        $this->value = array_filter($value);
+        $this->value = array_filter(
+            $value,
+            fn(string $value): bool => $value !== ''
+        );
 
         return $this;
     }
