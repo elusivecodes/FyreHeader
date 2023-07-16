@@ -1,6 +1,6 @@
 # FyreHeader
 
-**FyreHeader** is a free, HTTP header library for *PHP*.
+**FyreHeader** is a free, open-source immutable HTTP header library for *PHP*.
 
 
 ## Table Of Contents
@@ -44,7 +44,7 @@ Append a value to the header.
 - `$value` is a string representing the value to append.
 
 ```php
-$header->appendValue($value);
+$newHeader = $header->appendValue($value);
 ```
 
 **Get Header String**
@@ -86,7 +86,7 @@ Prepend a value to the header.
 - `$value` is a string representing the value to prepend.
 
 ```php
-$header->prependValue($value);
+$newHeader = $header->prependValue($value);
 ```
 
 **Set Value**
@@ -96,5 +96,5 @@ Set the header value.
 - `$value` is a string representing the header value.
 
 ```php
-$header->setValue($value);
+$newHeader = $header->setValue($value);
 ```

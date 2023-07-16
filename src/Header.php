@@ -3,14 +3,13 @@ declare(strict_types=1);
 
 namespace Fyre\Http;
 
-use function
-    array_keys,
-    array_map,
-    array_unshift,
-    implode,
-    in_array,
-    is_array,
-    is_numeric;
+use function array_keys;
+use function array_map;
+use function array_unshift;
+use function implode;
+use function in_array;
+use function is_array;
+use function is_numeric;
 
 /**
  * Header
@@ -30,7 +29,7 @@ class Header
     {
         $this->name = $name;
 
-        $this->setValue($value);
+        $this->value = static::filterValue($value);
     }
 
     /**
@@ -45,15 +44,19 @@ class Header
     /**
      * Append a value to the header.
      * @param string $value The value to append.
-     * @return Header The Header.
+     * @return Header A new Header.
      */
     public function appendValue(string $value): static
     {
-        if ($value !== '' && !in_array($value, $this->value)) {
-            $this->value[] = $value;
+        if (!$value || in_array($value, $this->value)) {
+            return $this;
         }
 
-        return $this;
+        $temp = clone $this;
+
+        $temp->value[] = $value;
+
+        return $temp;
     }
 
     /**
@@ -111,11 +114,15 @@ class Header
      */
     public function prependValue(string $value): static
     {
-        if ($value !== '' && !in_array($value, $this->value)) {
-            array_unshift($this->value, $value);
+        if (!$value || in_array($value, $this->value)) {
+            return $this;
         }
 
-        return $this;
+        $temp = clone $this;
+
+        array_unshift($temp->value, $value);
+
+        return $temp;
     }
 
     /**
@@ -125,16 +132,28 @@ class Header
      */
     public function setValue(string|array $value): static
     {
+        $temp = clone $this;
+
+        $temp->value = static::filterValue($value);
+
+        return $temp;
+    }
+
+    /**
+     * Filter the value.
+     * @param string|array $value The value.
+     * @return array The filtered value.
+     */
+    protected static function filterValue(string|array $value): array
+    {
         if (!is_array($value)) {
             $value = [$value];
         }
 
-        $this->value = array_filter(
+        return array_filter(
             $value,
             fn(string $value): bool => $value !== ''
         );
-
-        return $this;
     }
 
 }

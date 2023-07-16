@@ -3,9 +3,8 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use
-    Fyre\Http\Header,
-    PHPUnit\Framework\TestCase;
+use Fyre\Http\Header;
+use PHPUnit\Framework\TestCase;
 
 final class HeaderTest extends TestCase
 {
@@ -47,11 +46,14 @@ final class HeaderTest extends TestCase
 
     public function testAppendValue(): void
     {
-        $header = new Header('test', 'value');
+        $header1 = new Header('test', 'value');
+        $header2 = $header1->appendValue('last');
 
         $this->assertSame(
-            $header,
-            $header->appendValue('last')
+            [
+                'value'
+            ],
+            $header1->getValue()
         );
 
         $this->assertSame(
@@ -59,21 +61,43 @@ final class HeaderTest extends TestCase
                 'value',
                 'last'
             ],
-            $header->getValue()
+            $header2->getValue()
         );
     }
 
-    public function testAppendValueEmpty(): void
+    public function testAppendValueDuplicate(): void
     {
-        $header = new Header('test', 'value');
+        $header1 = new Header('test', 'value');
+        $header2 = $header1->appendValue('value');
 
-        $header->appendValue('');
+        $this->assertSame(
+            $header1,
+            $header2
+        );
 
         $this->assertSame(
             [
                 'value'
             ],
-            $header->getValue()
+            $header2->getValue()
+        );
+    }
+
+    public function testAppendValueEmpty(): void
+    {
+        $header1 = new Header('test', 'value');
+        $header2 = $header1->appendValue('');
+
+        $this->assertSame(
+            $header1,
+            $header2
+        );
+
+        $this->assertSame(
+            [
+                'value'
+            ],
+            $header2->getValue()
         );
     }
 
@@ -129,11 +153,14 @@ final class HeaderTest extends TestCase
 
     public function testPrependValue(): void
     {
-        $header = new Header('test', 'value');
+        $header1 = new Header('test', 'value');
+        $header2 = $header1->prependValue('first');
 
         $this->assertSame(
-            $header,
-            $header->prependValue('first')
+            [
+                'value'
+            ],
+            $header1->getValue()
         );
 
         $this->assertSame(
@@ -141,65 +168,102 @@ final class HeaderTest extends TestCase
                 'first',
                 'value'
             ],
-            $header->getValue()
+            $header2->getValue()
         );
     }
 
-    public function testPrependValueEmpty(): void
+    public function testPrependValueDuplicate(): void
     {
-        $header = new Header('test', 'value');
+        $header1 = new Header('test', 'value');
+        $header2 = $header1->prependValue('value');
 
-        $header->prependValue('');
+        $this->assertSame(
+            $header1,
+            $header2
+        );
 
         $this->assertSame(
             [
                 'value'
             ],
-            $header->getValue()
+            $header2->getValue()
+        );
+    }
+
+    public function testPrependValueEmpty(): void
+    {
+        $header1 = new Header('test', 'value');
+        $header2 = $header1->prependValue('');
+
+        $this->assertSame(
+            $header1,
+            $header2
+        );
+
+        $this->assertSame(
+            [
+                'value'
+            ],
+            $header2->getValue()
         );
     }
 
     public function testSetValue(): void
     {
-        $header = new Header('test', 'value');
+        $header1 = new Header('test', 'value');
+        $header2 = $header1->setValue('new');
 
         $this->assertSame(
-            $header,
-            $header->setValue('new')
+            [
+                'value'
+            ],
+            $header1->getValue()
         );
 
         $this->assertSame(
             [
                 'new'
             ],
-            $header->getValue()
+            $header2->getValue()
         );
     }
 
     public function testSetValueArray(): void
     {
-        $header = new Header('test', 'value');
+        $header1 = new Header('test', 'value');
+        $header2 = $header1->setValue(['first', 'last']);
 
-        $header->setValue(['first', 'last']);
+        $this->assertSame(
+            [
+                'value'
+            ],
+            $header1->getValue()
+        );
 
         $this->assertSame(
             [
                 'first',
                 'last'
             ],
-            $header->getValue()
+            $header2->getValue()
         );
     }
 
     public function testSetValueEmpty(): void
     {
-        $header = new Header('test', 'value');
+        $header1 = new Header('test', 'value');
+        $header2 = $header1->setValue('');
 
-        $header->setValue('');
+        $this->assertSame(
+            [
+                'value'
+            ],
+            $header1->getValue()
+        );
 
         $this->assertSame(
             [],
-            $header->getValue()
+            $header2->getValue()
         );
     }
 
