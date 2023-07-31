@@ -110,7 +110,7 @@ class Header
     /**
      * Prepend a value to the header.
      * @param string $value The value to prepend.
-     * @return Header The Header.
+     * @return Header A new Header.
      */
     public function prependValue(string $value): static
     {
@@ -128,7 +128,7 @@ class Header
     /**
      * Set the header value.
      * @param string|array The header value.
-     * @return Header The Header.
+     * @return Header A new Header.
      */
     public function setValue(string|array $value): static
     {
