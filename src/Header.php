@@ -16,7 +16,6 @@ use function is_numeric;
  */
 class Header
 {
-
     protected string $name;
 
     protected array $value = [];
@@ -25,7 +24,7 @@ class Header
      * New Header constructor.
      * @param string $name The header name.
      */
-    public function __construct(string $name, string|array $value = '')
+    public function __construct(string $name, array|string $value = '')
     {
         $this->name = $name;
 
@@ -130,7 +129,7 @@ class Header
      * @param string|array The header value.
      * @return Header A new Header.
      */
-    public function setValue(string|array $value): static
+    public function setValue(array|string $value): static
     {
         $temp = clone $this;
 
@@ -144,7 +143,7 @@ class Header
      * @param string|array $value The value.
      * @return array The filtered value.
      */
-    protected static function filterValue(string|array $value): array
+    protected static function filterValue(array|string $value): array
     {
         if (!is_array($value)) {
             $value = [$value];
@@ -155,5 +154,4 @@ class Header
             fn(string $value): bool => $value !== ''
         );
     }
-
 }

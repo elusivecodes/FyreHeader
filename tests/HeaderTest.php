@@ -8,42 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 final class HeaderTest extends TestCase
 {
-
-    public function testValue(): void
-    {
-        $header = new Header('test', 'value');
-
-        $this->assertSame(
-            [
-                'value'
-            ],
-            $header->getValue()
-        );
-    }
-
-    public function testValueArray(): void
-    {
-        $header = new Header('test', ['first', 'last']);
-
-        $this->assertSame(
-            [
-                'first',
-                'last'
-            ],
-            $header->getValue()
-        );
-    }
-
-    public function testEmptyValue(): void
-    {
-        $header = new Header('test');
-
-        $this->assertSame(
-            [],
-            $header->getValue()
-        );
-    }
-
     public function testAppendValue(): void
     {
         $header1 = new Header('test', 'value');
@@ -98,6 +62,16 @@ final class HeaderTest extends TestCase
                 'value'
             ],
             $header2->getValue()
+        );
+    }
+
+    public function testEmptyValue(): void
+    {
+        $header = new Header('test');
+
+        $this->assertSame(
+            [],
+            $header->getValue()
         );
     }
 
@@ -267,4 +241,28 @@ final class HeaderTest extends TestCase
         );
     }
 
+    public function testValue(): void
+    {
+        $header = new Header('test', 'value');
+
+        $this->assertSame(
+            [
+                'value'
+            ],
+            $header->getValue()
+        );
+    }
+
+    public function testValueArray(): void
+    {
+        $header = new Header('test', ['first', 'last']);
+
+        $this->assertSame(
+            [
+                'first',
+                'last'
+            ],
+            $header->getValue()
+        );
+    }
 }
