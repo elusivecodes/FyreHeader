@@ -22,6 +22,7 @@ class Header
 
     /**
      * New Header constructor.
+     *
      * @param string $name The header name.
      */
     public function __construct(string $name, array|string $value = '')
@@ -33,6 +34,7 @@ class Header
 
     /**
      * Get the header string.
+     *
      * @return string The header string.
      */
     public function __toString(): string
@@ -42,6 +44,7 @@ class Header
 
     /**
      * Append a value to the header.
+     *
      * @param string $value The value to append.
      * @return Header A new Header.
      */
@@ -60,6 +63,7 @@ class Header
 
     /**
      * Get the header string.
+     *
      * @return string The header string.
      */
     public function getHeaderString(): string
@@ -69,6 +73,7 @@ class Header
 
     /**
      * Get the header name.
+     *
      * @return string The header name.
      */
     public function getName(): string
@@ -78,6 +83,7 @@ class Header
 
     /**
      * Get the header value.
+     *
      * @return array The header value.
      */
     public function getValue(): array
@@ -87,6 +93,7 @@ class Header
 
     /**
      * Get the header value as a string.
+     *
      * @return string The header value string.
      */
     public function getValueString(): string
@@ -108,6 +115,7 @@ class Header
 
     /**
      * Prepend a value to the header.
+     *
      * @param string $value The value to prepend.
      * @return Header A new Header.
      */
@@ -126,6 +134,7 @@ class Header
 
     /**
      * Set the header value.
+     *
      * @param string|array The header value.
      * @return Header A new Header.
      */
@@ -140,6 +149,7 @@ class Header
 
     /**
      * Filter the value.
+     *
      * @param string|array $value The value.
      * @return array The filtered value.
      */

@@ -15,7 +15,7 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header1->getValue()
         );
@@ -23,7 +23,7 @@ final class HeaderTest extends TestCase
         $this->assertSame(
             [
                 'value',
-                'last'
+                'last',
             ],
             $header2->getValue()
         );
@@ -41,7 +41,7 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header2->getValue()
         );
@@ -59,7 +59,7 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header2->getValue()
         );
@@ -132,7 +132,7 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header1->getValue()
         );
@@ -140,7 +140,7 @@ final class HeaderTest extends TestCase
         $this->assertSame(
             [
                 'first',
-                'value'
+                'value',
             ],
             $header2->getValue()
         );
@@ -158,7 +158,7 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header2->getValue()
         );
@@ -176,7 +176,7 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header2->getValue()
         );
@@ -189,14 +189,14 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header1->getValue()
         );
 
         $this->assertSame(
             [
-                'new'
+                'new',
             ],
             $header2->getValue()
         );
@@ -209,7 +209,7 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header1->getValue()
         );
@@ -217,7 +217,7 @@ final class HeaderTest extends TestCase
         $this->assertSame(
             [
                 'first',
-                'last'
+                'last',
             ],
             $header2->getValue()
         );
@@ -230,7 +230,7 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header1->getValue()
         );
@@ -247,7 +247,7 @@ final class HeaderTest extends TestCase
 
         $this->assertSame(
             [
-                'value'
+                'value',
             ],
             $header->getValue()
         );
@@ -260,7 +260,7 @@ final class HeaderTest extends TestCase
         $this->assertSame(
             [
                 'first',
-                'last'
+                'last',
             ],
             $header->getValue()
         );
