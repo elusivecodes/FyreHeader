@@ -135,7 +135,7 @@ class Header
     /**
      * Set the header value.
      *
-     * @param string|array The header value.
+     * @param array|string The header value.
      * @return Header A new Header.
      */
     public function setValue(array|string $value): static
@@ -150,7 +150,7 @@ class Header
     /**
      * Filter the value.
      *
-     * @param string|array $value The value.
+     * @param array|string $value The value.
      * @return array The filtered value.
      */
     protected static function filterValue(array|string $value): array
