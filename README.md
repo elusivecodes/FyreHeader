@@ -6,7 +6,7 @@
 ## Table Of Contents
 - [Installation](#installation)
 - [Header Creation](#header-creation)
-- [Methods](#methods)
+- [Header Methods](#header-methods)
 
 
 
@@ -35,7 +35,7 @@ $header = new Header($name, $value);
 ```
 
 
-## Methods
+## Header Methods
 
 **Append Value**
 
