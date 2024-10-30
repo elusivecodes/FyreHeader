@@ -5,8 +5,8 @@
 
 ## Table Of Contents
 - [Installation](#installation)
-- [Header Creation](#header-creation)
-- [Header Methods](#header-methods)
+- [Basic Usage](#basic-usage)
+- [Methods](#methods)
 
 
 
@@ -25,7 +25,7 @@ use Fyre\Http\Header;
 ```
 
 
-## Header Creation
+## Basic Usage
 
 - `$name` is a string representing the header name.
 - `$value` is a string or array representing the header value.
@@ -35,7 +35,7 @@ $header = new Header($name, $value);
 ```
 
 
-## Header Methods
+## Methods
 
 **Append Value**
 
