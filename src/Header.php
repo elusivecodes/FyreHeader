@@ -16,8 +16,6 @@ use function is_numeric;
  */
 class Header
 {
-    protected string $name;
-
     protected array $value = [];
 
     /**
@@ -25,10 +23,10 @@ class Header
      *
      * @param string $name The header name.
      */
-    public function __construct(string $name, array|string $value = '')
-    {
-        $this->name = $name;
-
+    public function __construct(
+        protected string $name,
+        array|string $value = ''
+    ) {
         $this->value = static::filterValue($value);
     }
 
