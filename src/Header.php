@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Fyre\Http;
 
+use Fyre\Utility\Traits\MacroTrait;
+
 use function array_keys;
 use function array_map;
 use function array_unshift;
@@ -16,6 +18,8 @@ use function is_numeric;
  */
 class Header
 {
+    use MacroTrait;
+
     protected array $value = [];
 
     /**

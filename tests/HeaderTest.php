@@ -4,7 +4,10 @@ declare(strict_types=1);
 namespace Tests;
 
 use Fyre\Http\Header;
+use Fyre\Utility\Traits\MacroTrait;
 use PHPUnit\Framework\TestCase;
+
+use function class_uses;
 
 final class HeaderTest extends TestCase
 {
@@ -122,6 +125,14 @@ final class HeaderTest extends TestCase
         $this->assertSame(
             'a=1, b=2',
             $header->getValueString()
+        );
+    }
+
+    public function testMacroable(): void
+    {
+        $this->assertContains(
+            MacroTrait::class,
+            class_uses(Header::class)
         );
     }
 
